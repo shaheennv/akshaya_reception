@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="locked">
 <head>
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Akshaya &amp; Anujith – Marriage Ceremony</title>
@@ -290,7 +288,19 @@ section { position: relative; z-index: 1; padding: 0 30px; }
 
 /* map */
 .mapsec { padding-top: 60px; padding-bottom: 8px; }
-.recep { padding-top: 56px; padding-bottom: 8px; }
+/* reception: golden band with scalloped edges */
+.recep { position: relative; margin-top: 70px; padding: 56px 16px 40px; background: linear-gradient(180deg, #F6DC97 0%, #FBEAC0 35%, #FDF2D8 100%); }
+.recep::before, .recep::after { content: ""; position: absolute; left: 0; right: 0; height: 14px; background: radial-gradient(circle at 14px 14px, #F6DC97 13.5px, transparent 14px) 0 0 / 28px 28px repeat-x; }
+.recep::before { top: -13px; }
+.recep::after { bottom: -13px; transform: scaleY(-1); background: radial-gradient(circle at 14px 14px, #FDF2D8 13.5px, transparent 14px) 0 0 / 28px 28px repeat-x; }
+.recep-card { position: relative; padding-top: 54px; }
+.recep-badge {
+  position: absolute; left: 50%; top: -40px; transform: translateX(-50%);
+  width: 76px; height: 76px; border-radius: 50%;
+  background: #FFF9EC var(--img-flower2) center / 120% no-repeat;
+  box-shadow: 0 0 0 2px var(--gold), 0 0 0 7px #FFF9EC, 0 0 0 8px var(--gold-soft), 0 10px 20px rgba(120, 80, 10, .25);
+}
+.recep .coords { margin-top: 18px; }
 .recep .divider { margin: 0 auto 26px; }
 .recep .datestrip { margin-top: 18px; }
 .recep-venue { margin-top: 8px; font-family: var(--caps); font-size: 14px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); padding-left: .2em; }
@@ -1179,6 +1189,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </section>
 
   <section class="recep">
+    <div class="recep-card reveal">
+    <span class="recep-badge" aria-hidden="true"></span>
     <div class="reveal">
       <p class="intro-line">You are also warmly invited to the</p>
       <p class="intro-title">Wedding Reception</p>
@@ -1201,6 +1213,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
       <a class="navbtn" id="rnavBtn" target="_blank" rel="noopener"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4.5 20.3l.7.7L12 18l6.8 3 .7-.7z" fill="currentColor"/></svg>Navigate</a>
     </div>
     <p class="coords reveal" id="rcoords"></p>
+    </div>
   </section>
 
   <section class="closing">
